@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Welcome to Rare Book Store</title>
+
+  <body style="background-color:powderblue;">
+  <link rel="stylesheet" href="styles.css">
+  <script src="newscripts.js"></script>
+</head>
+
+<body>
+  <h1>Rare Book Store - Inventory System</h1> <br><br>
+  <style>
+    h1 {
+      text-align: center;
+    }
+  </style>
+  
+  
+  <div class="container"">
+
+    
+    
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+        required>
+
+      <input type="submit" onclick="doLogin()" value="Login">&nbsp;&nbsp;
+      
+        
+      
+      
+      <a href="Forgot.html">Forgot Password</a> &nbsp;&nbsp;
+      <a href="reset.html">Change Password</a></left>&nbsp;&nbsp;
+      <a href="createaccount.html">Create Account</a>
+  </div>
+  <img src="book.jpg" width="100%" height="auto";>
+
+</body>
+
+</html>

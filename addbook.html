@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome to Rare Book Store</title>
+
+<body style="background-color:powderblue;">
+  <script src="scripts.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="newscripts.js"></script>
+  </head>
+
+  <body>
+    <h1>Rare Book Store - Inventory System</h1> <br>
+    <!--<style>
+      h1 {
+        text-align: center;
+      }
+    </style>-->
+    <div id="userDiv" onload="doUserInfo();"></div><br>
+    <form>
+      <left><label for="title">Title of the Book</label>
+        <input type="text" id="title" name="title" required></input><br><br>
+
+        <label for="author">Author of the Book</label>
+        <input type="text" id="author" name="author" required></input><br><br>
+
+        <label for="year">Year Published</label>
+        <input type="date" id="year" name="year" required></input><br><br>
+
+        <label for="category">Book Category</label>
+        <select name="category" id="Journal">
+          <option value="" selected>---Choose---</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="horror">Horror</option>
+          <option value="science">Science</option>
+          <option value="remance">Romance</option>
+        </select><br><br>
+
+        <label for="condition">Book Condition</label>
+        <select name="books" id="condition">
+          <option value="" selected>---Choose---</option>
+          <option value="new">New</option>
+          <option value="used">Used</option>
+          <option value="poor">Poor</option>
+        </select><br><br>
+
+        <label for="price">Price of the book $</label>
+        <input type="number" id="price" name="price" required></input><br><br>
+
+        <label for="barcode">Book Barcode</label>
+        <input type="text"></input><br><br>
+
+        <label for="inventory">Inventory Available</label>
+        <input type="number" required></input><br><br>
+
+        
+        <div>
+          <input type="button" id="btnShowMsg" value="Add Book" onClick="showMessage1()" />
+          <button type="Submit" formaction="/main.html">Cancel</button>
+        </div>
+      </left>
+      
+    </form>
+  </body>
+  <script>
+
+    var bookListKey = "book-list";
+    var getBookList = () => {
+      return JSON.parse(localStorage.getItem(bookListKey));
+    };
+
+    doUserInfo();
+    var doAdd = () => {
+      let bookList = getBookList();
+      let tbtitle = document.getElementById("title");
+      let tbauthor = document.getElementById("author");
+      let found = false;
+
+      for (let i = 0; i < bookList.length; i++) {
+        let book = bookList[i];
+        const [title, author, year, price, condition] = book;
+        if (title.toUpperCase() == tbTitle.value.toUpperCase() && author.toUpperCase() == tbTitle.value.toUpperCase()) {
+          alert("This book is already apart of the collection.")
+          found = true;
+        }
+      }
+
+      /*
+      if(!found) {
+          //title, author, location, pDate, condition
+          let book = [title, author, location, pDate, condition]
+          bookList.push()
+      }
+      */
+
+    };
+    var goToAdd = () => {
+      let loggedInUser = getLoggedInUser();
+      console.dir(loggedInUser.employee);
+      console.dir(loggedInUser.employee.permissions);
+      if (loggedInUser.employee.permissions.list) {
+        window.location.href = "addbook.html";
+      } else {
+        alert("This user does not have permission to access the add page.");
+      }
+    };
+
+    
+  </script>
+
+</html>

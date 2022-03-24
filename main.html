@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome Rare Book Store</title>
+
+<body style="background-color:powderblue;">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+<script src="newscripts.js"></script>
+  </head>
+
+  <body>
+    <h1>Rare Book Store - Inventory System</h1> <br><br>
+    <style>
+      h1 {
+        text-align: center;
+      }
+    </style>
+    <div id="userDiv" onload="doUserInfo();"></div>
+    
+    <form>
+      <center><button type="submit" formaction="/search-book-list.html"> Search Inventory
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" formaction="/addbook.html"> Add Book </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" formaction="/updatebook.html"> Update Book </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" formaction="/deletebook.html"> Delete Book </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" formaction="/index.html"> Logout </button><br><br>
+      </center>
+      <div>
+        <img src="book.jpg" width="100%" height="auto" ;>
+      </div>
+    </form>
+    <script>
+      doUserInfo();
+  </script>
+  </body>
+
+</html>

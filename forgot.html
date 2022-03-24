@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Welcome to Rare Book Store</title>
+
+<body style="background-color:powderblue;">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!--<form>-->
+        <form>
+            <p> <strong>Re-set your password</strong> </p>
+            <style>
+                p {
+                    text-align: center;
+                    font-family: "Arial";
+                }
+            </style>
+           <label for="emailID">Email ID:</label>
+           <input type="alphanumeric" id="emailID" placeholder="Enter your recovery email" name="emailID" title="EmailID" />
+           <button type="button" onclick="showmessage5()">Submit</button>
+           <label for="newpassword">New Password:</label>
+           <input type="password" id="newpassword" placeholder="Enter NewPassword" name="newpassword" title="New password" />
+       
+           <label for="confirmpassword">Confirm Password:</label>
+           <input type="password" id="confirmpassword" placeholder="ConfirmPassword"name="confirmpassword" title="Confirm password" />
+       
+           
+           <button type="button" onclick="mainpage1()">Login</button><br><br>
+         
+        <!--<input type="password" placeholder=" Re-enter Password" name="password" required></input>&nbsp;&nbsp;&nbsp;
+            <label for="oldpassword">OldPassword</label>-->
+            <!--<input type="alphanumeric" placeholder="Enter OldPassword" id="oldpassword" name="oldpassword" required>
+            <label for="newpassword">NewPassword</label>
+            <input type="password" placeholder="Enter NewPassword" id="newpassword" name="newpassword"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required>-->
+            
+            <!--<input type="submit" value="Submit" onClick="showMessage()">-->
+            <!--<input type="submit" value="Submit" onClick="Function()">-->
+            <!--<button id="submit" type="button" onclick="dosomething()">Save</button>-->
+            <!--<input type="submit" value="Submit" onClick="checkForm()">-->
+
+            <!--<input type="button" id="btnShowMsg" value="Login" onClick="showMessage()"</input>&nbsp;&nbsp;&nbsp;&nbsp;-->
+            <!--<button type="submit" formaction="/index.html">Go Back</button> &nbsp;&nbsp;&nbsp;&nbsp;-->
+            <!--<button id="submit" type="button" onclick="location.href='index.html'">Go Back</button><br><br>-->
+            <!--<a href="createaccount.html">Create Account</a><br><br>-->
+            <div>
+                <img src="book.jpg" width="100%" height="auto" ;>
+            </div>
+
+            <!--</form>-->
+        </form>
+
+    </body>
+<script>
+    function showmessage5() {
+        if (emailID == "" ) {
+            alert('Please fill all the details');
+        }
+        else
+        alert("Please check your Email for the new password!")
+    }
+
+    function mainpage1() {
+    var newpassword = document.getElementById('newpassword').value;
+        var confirmpassword = document.getElementById('confirmpassword').value;
+        if (emailID == "" || newpassword == "" || confirmpassword == "") {
+            alert('Please fill all the details');
+        }
+        else if (newpassword != confirmpassword) {
+            alert("password mismatch");
+           
+        }
+        else if(newpassword ==confirmpassword) {
+            alert("LoggedIn successfully!");
+            location.href="index.html"
+        }  
+    }  
+</script>
+
+    </html>

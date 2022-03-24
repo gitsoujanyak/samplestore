@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search and Sort books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="./scripts.js" defer></script>
+    <script src="newscripts.js"></script>
+    
+   
+</head>
+
+<body>
+    
+    <center><h1>Rare Book Store - Inventory System</h1></center><br>
+    <div id="userDiv" onload="doUserInfo();"></div><br>
+
+    <p><strong>To Search - Provide input to search by title, author, price of the book.</strong></p>
+    <p><strong>To Sort - Click the headers to sort the table ascending and descending.</strong></p>
+    <br>
+    <label for="category">Search category</label>
+        <select name="category" id="Journal">
+            <option value="" selected>---Choose---</option>
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+            <option value="price">Price</option>
+        </select>
+        <input type="text" id="myInput" onkeyup="searchBooks()" placeholder="Search by category...."
+        title="Type in a name">
+          
+    <br><br>
+
+
+    <table id="bookTable">
+        <tr>
+            <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+            <th onclick="sortTableAlpha(0)">Title of Book</th>
+            <th onclick="sortTableAlpha(1)">Author of Book</th>
+            <th onclick="sortTableNumeric(2)">Price($) of Book</th>
+            <th onclick="sortTableNumeric(3)">Year Published</th>
+            <th onclick="sortTableNumeric(4)">Inventory Available</th>
+        </tr>
+        <tr>
+            <td>Shakespeare's First Folio</td>
+            <td>William Shakespeare</td>
+            <td>867.90</td>
+            <td>1622</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>The Birds of America</td>
+            <td>John James Audubon</td>
+            <td>1197.65</td>
+            <td>1820</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>The Declaration of Independence</td>
+            <td>Thomas Jefferson</td>
+            <td>2197.65</td>
+            <td>1776</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>The Gutenberg Bible</td>
+            <td>Johann Gutenberg</td>
+            <td>977.65</td>
+            <td>1440</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Don Quixote</td>
+            <td>Miguel de Cervantes</td>
+            <td>1297.65</td>
+            <td>1605</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>The Codex of Leicester</td>
+            <td>Leonardo da Vinci</td>
+            <td>1527.65</td>
+            <td>1694</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Tamerlane and Other Poems</td>
+            <td>Edgar Allan Poe</td>
+            <td>2197.65</td>
+            <td>1827</td>
+            <td>4</td>
+        </tr>
+
+        
+
+    </table>
+    <script>
+        doUserInfo();
+        
+    </script>     
+</body>
+
+<div>
+    <form>
+       <br><br> <button type="submit" formaction="/main.html"> Go Back to Main Page</button>&nbsp;&nbsp;&nbsp;&nbsp;
+       <button type="submit" onClick="resetSearchPage()">Reset Page</button>
+        </form>
+    </div>
+        
+</html>

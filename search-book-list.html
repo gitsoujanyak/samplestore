@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search and Sort books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <script src="newscripts.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+
+
+</head>
+
+<body>
+
+    <center>
+        <h1>Rare Book Store - Inventory System</h1>
+    </center><br>
+    <div id="userDiv" onload="doUserInfo();"></div><br>
+
+    <p><strong>To Search - Provide input to search by title, author, price of the book.</strong></p>
+    <p><strong>To Sort - Click the headers to sort the table ascending and descending.</strong></p>
+    <br>
+    <label for="category">Search category</label>
+    <select name="category" id="Journal">
+        <option value="" selected>---Choose---</option>
+        <option value="title">Title</option>
+        <option value="author">Author</option>
+        <option value="price">Price</option>
+    </select>
+    <input type="text" id="myInput" onkeyup="searchBooks()" placeholder="Search by category...." title="Type in a name">
+
+    <br><br>
+
+
+    <table id="bookTable">
+        <tr>
+            <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+            <th onclick="sortTableAlpha(0)">Title of Book</th>
+            <th onclick="sortTableAlpha(1)">Author of Book</th>
+            <th onclick="sortTableNumeric(2)">Price($) of Book</th>
+            <th onclick="sortTableNumeric(3)">Year Published</th>
+            <th onclick="sortTableNumeric(4)">Inventory Available</th>
+        </tr>
+        <tr id="row1">
+            <td id="title_row1">Shakespeare's First Folio</td>
+            <td id="author_row1">William Shakespeare</td>
+            <td id="price_row1">867.90</td>
+            <td id="year_row1">1622</td>
+            <td id="inventory_row1">4</td>
+            <td>
+                <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                <input type="button" value="Delete" class="delete" onclick="goToDelete();">
+            </td>
+        </tr>
+
+        <tr id="row2">
+            <td id="title_row2">The Declaration of Independence</td>
+            <td id="author_row2">Thomas Jefferson</td>
+            <td id="price_row2">2197.65</td>
+            <td id="year_row2">1776</td>
+            <td id="inventory_row2">0</td>
+            <td>
+                <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+                <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+                <input type="button" value="Delete" class="delete" onclick="goToDelete();">
+            </td>
+        </tr>
+
+        <tr id="row3">
+            <td id="title_row3">The Codex of Leicester</td>
+            <td id="author_row3">Leonardo da Vinci</td>
+            <td id="price_row3">1527.65</td>
+            <td id="year_row3">1827</td>
+            <td id="inventory_row3">4</td>
+            <td>
+                <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+                <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+                <input type="button" value="Delete" class="delete" onclick="goToDelete();">
+            </td>
+        </tr>
+
+        <tr id="row4">
+            <td id="title_row4">The Gutenberg Bible</td>
+            <td id="author_row4">Johann Gutenberg</td>
+            <td id="price_row4">1297.65</td>
+            <td id="year_row4">1605</td>
+            <td id="inventory_row4">8</td>
+            <td>
+                <input type="button" id="edit_button4" value="Edit" class="edit" onclick="edit_row('4')">
+                <input type="button" id="save_button4" value="Save" class="save" onclick="save_row('4')">
+                <input type="button" value="Delete" class="delete" onclick="goToDelete();">
+            </td>
+
+        <tr id="row5">
+            <td id="title_row5">Don Quixote</td>
+            <td id="author_row5">Miguel de Cervantes</td>
+            <td id="price_row5">1297.65</td>
+            <td id="year_row5">1605</td>
+            <td id="inventory_row5">8</td>
+            <td>
+                <input type="button" id="edit_button5" value="Edit" class="edit" onclick="edit_row('5')">
+                <input type="button" id="save_button5" value="Save" class="save" onclick="save_row('5')">
+                <input type="button" value="Delete" class="delete" onclick="goToDelete();">
+            </td>
+
+        <tr id="row6">
+            <td id="title_row6">Tamerlane and Other Poems</td>
+            <td id="author_row6">Edgar Allan Poe</td>
+            <td id="price_row6">2197.65</td>
+            <td id="year_row6">1827</td>
+            <td id="inventory_row6">4</td>
+            <td>
+                <input type="button" id="edit_button6" value="Edit" class="edit" onclick="edit_row('6')">
+                <input type="button" id="save_button6" value="Save" class="save" onclick="save_row('6')">
+                <input type="button" value="Delete" class="delete" onclick="goToDelete();">
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="text" id="new_title"></td>
+            <td><input type="text" id="new_author"></td>
+            <td><input type="text" id="new_price"></td>
+            <td><input type="text" id="new_year"></td>
+            <td><input type="text" id="new_inventory"></td>
+            <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+        </tr>
+
+    </table>
+    </div>
+
+</body>
+<script>
+    
+        doUserInfo();
+        
+   
+    var bookListKey = "book-list";
+    var getBookList = () => {
+        return JSON.parse(localStorage.getItem(bookListKey));
+    };
+
+   
+    var doAdd = () => {
+        let bookList = getBookList();
+        let tbtitle = document.getElementById("title");
+        let tbauthor = document.getElementById("author");
+        let found = false;
+
+        for (let i = 0; i < bookList.length; i++) {
+            let book = bookList[i];
+            const [title, author, year, price, condition] = book;
+            if (title.toUpperCase() == tbTitle.value.toUpperCase() && author.toUpperCase() == tbTitle.value.toUpperCase()) {
+                alert("This book is already apart of the collection.")
+                found = true;
+            }
+        }
+
+        /*
+        if(!found) {
+            //title, author, location, pDate, condition
+            let book = [title, author, location, pDate, condition]
+            bookList.push()
+        }
+        */
+
+    };
+    var goToAdd = () => {
+        let loggedInUser = getLoggedInUser();
+        console.dir(loggedInUser.employee);
+        console.dir(loggedInUser.employee.permissions);
+        if (loggedInUser.employee.permissions.list) {
+            window.location.href = "addbook.html";
+        } else {
+            alert("This user does not have permission to access the add page.");
+        }
+    };
+
+
+</script>
+
+</html>

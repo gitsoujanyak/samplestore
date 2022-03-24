@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rare Book Store</title>
+
+<body style="background-color:powderblue;">
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+    * {box-sizing: border-box;}
+  </style>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="scripts.js"></script>
+  <script src="newscripts.js"></script>  
+  
+  </head>
+
+  <body>
+    
+    <form>
+      <center>
+        <h1>Rare Book Store - Inventory System</h1>
+      </center>
+      <br>
+      <div id="userDiv" onload="doUserInfo();"></div><br>
+      <label for="barcode">Enter Barcode </label>
+      <input type="text"></input><br><br><br>
+      <label for="name of the book">Enter Book Title</label>
+      <input type="text" id="name" name="name" required></input><br><br><br>
+
+      <button id="delete" onclick="goToDelete();">Delete</button><br/>
+      <!--<button class="open-button" onclick="openForm()">Delete Book</button><br><br>
+        <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <label for="code"><b>AuthorizationCode</b></label>
+          <input type="text" placeholder="Enter Manager Code" name="code" required>   
+          
+          <input type="button" id="btnShowMsg" value="Confirm Delete"
+            onClick="showMessage3()" />&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="submit" formaction="/main.html" class="btn">Go Back</button>-->
+        </form>
+
+      </div>
+      <script>
+        doUserInfo();
+        
+    </script>   
+  </body>
+ 
+
+</html>

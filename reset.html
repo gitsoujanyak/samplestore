@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+<h1>Change Password</h1>
+
+<!--<form action="/main.html">-->
+    <label for="oldpassword">Old Password:</label>
+    <input type="password" id="oldpassword" placeholder="Enter OldPassword" name="oldpassword" title="Old password" />
+    <label for="newpassword">New Password:</label>
+    <input type="password" id="newpassword" placeholder="Enter NewPassword" name="newpassword" title="New password" />
+
+    <label for="confirmpassword">Confirm Password:</label>
+    <input type="password" id="confirmpassword" placeholder="ConfirmPassword"name="confirmpassword" title="Confirm password" />
+
+    <button type="button" onclick="dosomething()">Save</button>
+    <!--<button type="button" onclick="mainpage()">Return</button><br><br>-->
+
+<!--</form>-->
+<div>
+    <img src="book.jpg" width="100%" height="auto";>
+</div>
+</div>
+</body>
+
+<script>
+
+function dosomething() {
+        var oldpassword = document.getElementById('oldpassword').value;
+        var newpassword = document.getElementById('newpassword').value;
+        var confirmpassword = document.getElementById('confirmpassword').value;
+        if (oldpassword == "" || newpassword == "" || confirmpassword == "") {
+            alert('Please fill all the details');
+        }
+        else if (oldpassword == newpassword) {
+            alert("Old password and New Password cannot be same");
+        }
+        else if (newpassword != confirmpassword) {
+            alert("password mismatch");
+        }
+        else if(newpassword ==confirmpassword) {
+            alert("password created");
+            location.href="index.html"
+        }    
+        
+    }
+</script>
+</html>
+    
+

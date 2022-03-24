@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Rare Book Store</title>
+    <body style="background-color:powderblue;">
+    <script src="scripts.js"></script>  
+    <script src="newscripts.js"></script>  
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Rare Book Store - Inventory System</h1> <br>
+    <div id="userDiv" onload="doUserInfo();"></div><br>
+      <form>
+        <left><label for="title">Title of the Book</label>
+          <input type="text" id="title" name="title"></input><br><br>
+  
+          <label for="author">Author of the Book</label>
+          <input type="text" id="author" name="author"></input><br><br>
+  
+          <label for="year">Year Published</label>
+          <input type="date" id="year" name="year"></input><br><br>
+  
+          <label for="category">Book Category</label>
+          <select name="category" id="Journal">
+            <option value="" selected>---Choose---</option>
+            <option value="fiction">Fiction</option>
+            <option value="non-fiction">Non-Fiction</option>
+            <option value="horror">Horror</option>
+            <option value="science">Science</option>
+            <option value="remance">Romance</option>
+          </select><br><br>
+  
+          <label for="condition">Book Condition</label>
+          <select name="books" id="condition">
+            <option value="" selected>---Choose---</option>
+            <option value="new">New</option>
+            <option value="used">Used</option>
+            <option value="poor">Poor</option>
+          </select><br><br>
+  
+          <label for="price">Price of the book $</label>
+          <input type="number" id="price" name="price"></input><br><br>
+  
+          <label for="barcode">Book Barcode</label>
+          <input type="text"></input><br><br>
+
+          <label for="BookSold">Book Sold:</label>
+          <input type="radio" name="like">Yes
+          <input type="radio"name="like">No<br><br>
+
+          <label for="inventory">Inventory Available</label>
+          <input type="number"></input><br><br>
+          <div>
+        
+        <input type="button" id="btnShowMsg" value="Update Book" onClick="showMessage2()" />&nbsp;&nbsp;&nbsp;&nbsp;
+        <!--<button type="Submit" formaction="/main.html">Go back</button> &nbsp;&nbsp;&nbsp;&nbsp;-->
+        <button type="Submit" formaction="/main.html">Cancel</button></left></left>
+        </div>
+           
+          </form>
+          <script>
+            doUserInfo();
+        </script>        
+         </body>
+        </html>
