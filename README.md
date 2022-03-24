@@ -22,6 +22,13 @@ A manager has
 
 ### Tech tool stack - HTML5, CSS3, JS, Github, VS Code, OOPS
 
+###Login credentials
+emp1/testing1234
+emp2/testing1234
+mngr1/testing5678
+admin1/testingabc1
+
+
 
 
 
