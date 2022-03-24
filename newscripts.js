@@ -121,8 +121,10 @@ var login = (usrName, password) => {
     console.log(users[i].username);
     console.log(password);
     console.log(users[i].password);
-    if (usrName === users[i].userName && password === users[i].password) {
-      setLoggedInUser(users[i]);
+    if (usrName === users[i].username && password === users[i].password) {
+        console.log("Inside if loop");
+        setLoggedInUser(users[i]);
+        console.log("Logged user", users[i] )
       loggedIn = true;
       break;
     }
@@ -268,14 +270,15 @@ var goToUpdate = () => {
   }
 };
 
-var goToDelete = () => {
+var goToDelete = (no) => {
   let loggedInUser = getLoggedInUser();
   console.dir(loggedInUser.employee);
   console.dir(loggedInUser.employee.permissions);
-  if (loggedInUser.employee.permissions.delete) {
-    window.location.href = "deletebook.html";
+    if (loggedInUser.employee.permissions.delete) {
+    document.getElementById("row" + no + "").outerHTML = "";
+    //window.location.href = "deletebook.html";
     alert("Deleted sucessfully!")
-    window.location.href="main.html"
+   // window.location.href="main.html"
   } else {
     alert("This user does not have permission to access the delete page.");
     window.location.href="main.html"
