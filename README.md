@@ -1,5 +1,13 @@
 ## Rare Book-Store 
-- As part of final project deliverable below are all the list of items done/in progress
+- As part of final project deliverable below are all the list of items done/in progress.
+
+### Login credentials
+- Please click Initialize Users button first and then enter Username and Password to login.
+- Username: emp1/Password: testing1234
+- Username: emp2/Password: testing1234
+- Username: mngr1/Password: testing5678
+- Username: admin1/Password: testingabc1
+
 ### Created Employee class
 - name
 - Id number
@@ -27,11 +35,7 @@ A manager has
 
 ### Tech tool stack - HTML5, CSS3, JS, Github, VS Code, OOPS
 
-### Login credentials
-- emp1/testing1234
-- emp2/testing1234
-- mngr1/testing5678
-- admin1/testingabc1
+
 
 
 

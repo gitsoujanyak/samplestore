@@ -43,6 +43,7 @@ function resetSearchPage() {
   return false;
 }
 
+
 // script for sorting character columns
 function sortTableAlpha(n) {
   var table,
